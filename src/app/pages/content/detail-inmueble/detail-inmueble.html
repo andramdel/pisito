@@ -1,0 +1,106 @@
+<section class="contenedor">
+    @if(_authService.isLoggedIn() && _authService.usuario()?.rol === "ROLE_ADMIN"  || _authService.isLoggedIn() && _authService.usuario()?.rol === "ROLE_SUPERADMIN" && cargaCompletada()){
+        <app-boton-admin class="boton-admin"[idInmueble]="datos()!.id"></app-boton-admin>
+    }
+    <!--<app-corazon-favoritos></app-corazon-favoritos>-->
+    <div class="carousel-ficha">
+        <app-carousel-ficha [datos]="datos()!"></app-carousel-ficha>
+    </div>
+    <h1 class="titular-detaller">{{datos()!.claim}} en {{datos()!.poblacion.nombre | parentesis}}</h1>
+    <div class="contenedor-iconos-precio">
+        <div class="iconos">
+            <p class="precio">{{datos()!.precio | euros}}</p>
+        </div>
+        <div class="iconos">
+            <div>
+                <span class="numero-elementos">{{datos()!.banhos}}</span>
+                <img src="assets/img/banos.svg" alt="">
+            </div>
+            <div>
+                <span class="numero-elementos">{{datos()!.banhos}}</span>
+                <img src="assets/img/banos.svg" alt="">
+            </div>
+            <div>
+                <span class="numero-elementos">{{datos()!.banhos}}</span>
+                <img src="assets/img/banos.svg" alt="">
+            </div>
+            <div>
+                <span class="numero-elementos">{{datos()!.banhos}}</span>
+                <img src="assets/img/banos.svg" alt="">
+            </div>
+            <div>
+                <span class="numero-elementos">{{datos()!.banhos}}</span>
+                <img src="assets/img/banos.svg" alt="">
+            </div>
+        </div>
+        <div class="contenedor-equipamiento-instalaciones">
+            <div>
+                <i class="fa-solid fa-couch">{{datos()!.amueblado | amueblado}}</i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch">Apertura {{datos()!.apertura}}</i>
+            </div>
+        </div>
+        <div class="contenedor-equipamiento-instalaciones">
+            <div>
+                <i class="fa-solid fa-couch">{{datos()!.amueblado | amueblado}}</i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch">Apertura {{datos()?.apertura}}</i>
+            </div>
+        </div>
+        <div class="contenedor-equipamiento-instalaciones">
+            <div>
+                <i class="fa-solid fa-couch">{{datos()!.amueblado| amueblado}}</i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-couch">Apertura {{datos()!.apertura}}</i>
+            </div>
+        </div>
+    </div>
+</section>
