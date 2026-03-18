@@ -1,0 +1,30 @@
+<div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
+   <div class="carousel-indicators">
+    @for(banner of banners();track banner.id; let i=$index){
+            <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="i" class="active"
+                    aria-current="true" aria-label="Slide i"></button>
+                }
+        </div> 
+        <div class="carousel-inner">
+
+            @for( banner of banners() ; track banner.id; let i =$index){
+                <div [ngClass]="{'carousel-item':true, 'active':i==0}">
+                    <img src="urlMedia+banner.imagenes[0].url" class="d-block w-100" alt="Portada, logo de la empresa">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{banner.titular}}</h5>
+                        <p>{{banner.claim}}</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-home"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
